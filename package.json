@@ -35,6 +35,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"gsap": "^3.12.5",
 		"svelte-legos": "^0.2.2",
 		"svelte-tweakpane-ui": "^1.2.0"
 	}

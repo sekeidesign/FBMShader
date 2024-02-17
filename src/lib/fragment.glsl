@@ -82,8 +82,8 @@ float noise(vec2 p){
         f+=uTime*.005;
         f=fract(f);
         
-        float gap=mix(.8,.01,strength);
-        float mixer=smoothstep(0.,gap,f)-smoothstep(.8,1.,f);
+        float gap=mix(.4,.01,strength);
+        float mixer=smoothstep(0.,gap,f)-smoothstep(.6,1.,f);
         vec4 color=mix(color1,color2,mixer);
         gl_FragColor=color;
     }
