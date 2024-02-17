@@ -2,11 +2,13 @@
 	import { gsap } from 'gsap/dist/gsap';
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import { Canvas } from '@threlte/core';
+	import { onMount } from 'svelte';
+
 	import Scene from './Scene.svelte';
 	import plannedLogo from '$lib/PlannedLogo.svg';
 	import plannedAI from '$lib/PlannedAI.svg';
 	import brandMark from '$lib/BrandMark.svg';
-	import { onMount } from 'svelte';
+	import ogImage from '$lib/ogImage.png';
 
 	gsap.registerPlugin(TextPlugin);
 
@@ -22,8 +24,8 @@
 			'.text-1',
 			{
 				speed: 40,
-				text: 'We’re reinventing the way corporate events are planned.',
-				delimiter: ' '
+				text: 'We’re reinventing the way corporate events are planned.'
+				// delimiter: ' '
 			},
 			'-=.8'
 		);
@@ -37,7 +39,18 @@
 			'-=.2'
 		);
 	});
+
+	const title = 'Planned AI Shader Experiment';
+	const description = 'Learning WebGL, while practicing GSAP, just for fun';
 </script>
+
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={ogImage} />
+</svelte:head>
 
 <img
 	src={brandMark}
