@@ -62,7 +62,8 @@
 			uSpeed: { value: 1.0 },
 			uIntensity: { value: 1.0 },
 			uMouse: { value: positionUniform },
-			uResolution: { value: sizeUniform }
+			uResolution: { value: sizeUniform },
+			uSeed: { value: Math.random() }
 		}}
 		uniforms.uTime.value={time}
 	></T.ShaderMaterial>

@@ -10,9 +10,8 @@
 	import brandMark from '$lib/BrandMark.svg';
 	import ogImage from '$lib/ogImage.png';
 
-	gsap.registerPlugin(TextPlugin);
-
 	onMount(() => {
+		gsap.registerPlugin(TextPlugin);
 		const tl = gsap.timeline({ defaults: { duration: 0.8, ease: 'power4.inOut' } });
 		tl.to('.brand-mark', { opacity: 1, y: 0 });
 		tl.to('.loader-text > *', { opacity: 1, y: 0, stagger: 0.1 }, '-=.6');
@@ -71,7 +70,7 @@
 	<div class="absolute z-10 w-full h-full bg-white loader-white"></div>
 </div>
 <div
-	class="grid grid-rows-8 grid-cols-4 md:grid-cols-10 p-10 z-10 fixed h-screen w-screen font-aeonik text-white"
+	class="grid grid-rows-8 grid-cols-4 lg:grid-cols-10 p-10 z-10 fixed h-screen w-screen font-aeonik text-white"
 >
 	<div class="flex gap-1.5 items-start col-span-4 row-start-6 logo">
 		<img
@@ -86,8 +85,8 @@
 			style="height: clamp(.75rem, 3vh, 1.75rem); opacity: 0; transform: translateY(32px);"
 		/>
 	</div>
-	<p class="text-xl col-span-3 md:col-start-6 row-start-7 md:row-start-6 text-1"></p>
-	<p class="text-xl col-span-3 md:col-start-6 row-start-8 md:row-start-7 text-2"></p>
+	<p class="text-xl col-span-3 lg:col-start-6 row-start-7 lg:row-start-6 text-1"></p>
+	<p class="text-xl col-span-3 lg:col-start-6 row-start-8 lg:row-start-7 text-2"></p>
 </div>
 <div class="canvas-size">
 	<Canvas>

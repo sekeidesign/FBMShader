@@ -4,6 +4,7 @@ uniform float uTime;
 varying vec2 vUv;
 uniform vec2 uMouse;
 uniform vec2 uResolution;
+uniform float uSeed;
 
 #define NUM_OCTAVES 5
 
@@ -61,13 +62,12 @@ float noise(vec2 p){
         float dist=distance(uv,mouse);
         float strength=smoothstep(.0,.8,dist);
         
-        float hue=fract(uTime*.005);
+        float hue=fract(uTime*.005)+uSeed;
         
-        // vec3 rgb1=hsv(vec3(hue,.9,.85));
-        // vec3 rgb2=hsv(vec3(hue+.07,.85,.75));
+        // vec4 color1=vec4(hsv(vec3(hue,.9,.85)),1.);
+        // vec4 color2=vec4(hsv(vec3(hue+.07,.85,.75)),1.);
         
         vec4 color1=vec4(.122,.561,1.,1.);
-        
         vec4 color2=vec4(.6,.8,1.,1.);
         
         float grain=mix(.3*strength,-.2*strength,rand(100.*uv));
@@ -76,7 +76,7 @@ float noise(vec2 p){
         vec2 movement=vec2(uTime*.005,uTime*-.005);
         // movement*=rotate(uv,uTime*.025);
         
-        float f=fbm(uv*3.+movement);
+        float f=fbm(uv*3.+movement)+uSeed;
         f*=3.;
         f+=grain;
         f+=uTime*.005;
