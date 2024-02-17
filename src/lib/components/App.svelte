@@ -10,9 +10,8 @@
 	import brandMark from '$lib/BrandMark.svg';
 	import ogImage from '$lib/ogImage.png';
 
-	gsap.registerPlugin(TextPlugin);
-
 	onMount(() => {
+		gsap.registerPlugin(TextPlugin);
 		const tl = gsap.timeline({ defaults: { duration: 0.8, ease: 'power4.inOut' } });
 		tl.to('.brand-mark', { opacity: 1, y: 0 });
 		tl.to('.loader-text > *', { opacity: 1, y: 0, stagger: 0.1 }, '-=.6');
