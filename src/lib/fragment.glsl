@@ -66,8 +66,8 @@ float noise(vec2 p){
         
         // vec4 color1=vec4(hsv(vec3(hue,.9,.85)),1.);
         // vec4 color2=vec4(hsv(vec3(hue+.07,.85,.75)),1.);
-        vec4 color1=vec4(.122,.561,1.,1.);
         
+        vec4 color1=vec4(.122,.561,1.,1.);
         vec4 color2=vec4(.6,.8,1.,1.);
         
         float grain=mix(.3*strength,-.2*strength,rand(100.*uv));
